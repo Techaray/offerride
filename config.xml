@@ -7,7 +7,7 @@
     <author email="gursimrat.techarays@gmail.com" href="www.google.com">
         Offer Ride Team
     </author>
-    <content src="index.php" />
+    <content src="index.html" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
