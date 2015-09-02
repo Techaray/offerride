@@ -1,3 +1,4 @@
+<?php include 'lib/function.php';  ?>
 <!DOCTYPE html>
 <!--
     Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
@@ -32,14 +33,14 @@
 
 <div class="container">
   <h2>Offer Ride</h2>
-  <form role="form">
+  <form role="form" action="" method="post" name="offer_ride_form">
     <div class="form-group">
       <label for="email">Departure:</label>
-      <input type="text" class="form-control" id="email" placeholder="Enter Departure">
+      <input type="text" class="form-control" id="departure" name="departure" placeholder="Enter Departure">
     </div>
     
    
-    <button type="submit" class="btn btn-default">Offer Ride</button>
+    <button type="submit" name="offer_ride" class="btn btn-default">Offer Ride</button>
   </form>
 </div>
 
