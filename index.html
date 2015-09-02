@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html lang="en">
+<head>
+  <title>Offer Ride</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Offer Ride</h2>
+  <form role="form" action="" method="post" name="offer_ride_form">
+    <div class="form-group">
+      <label for="email">Departure:</label>
+      <input type="text" class="form-control" id="departure" name="departure" placeholder="Enter Departure">
+    </div>
+    
+   
+    <button type="submit" name="offer_ride" class="btn btn-default">Offer Ride</button>
+  </form>
+</div>
+<script>
+/*$(document).ready(function(){
+    $("button").click(function(){
+         $.ajax(
+          {
+            url: "http://api.testingwebsitedesign.com/request.php",
+            crossDomain: true,
+            dataType: 'jsonp',
+            data: {action: 'test'},
+            type: 'POST',
+            success: function(result)
+            {
+                $("#div1").html(result);
+            }
+          }); 
+
+       
+    });
+});*/
+
+$(document).bind("mobileinit", function() {
+    $.support.cors = true;
+    $.mobile.allowCrossDomainPages = true;
+});
+$(document).ready(function(){
+$('button').click(function () {
+ var req = new XMLHttpRequest();
+req.open("POST", "http://api.testingwebsitedesign.com/request.php", true);
+req.setRequestHeader("Content-type", "image/jpg");
+
+req.onreadystatechange = function() {
+    if (req.readyState == 4) {
+        if (req.status == 200) {
+            var data = req.responseText;
+        }
+    }
+};
+req.send(null);
+});
+});
+
+</script>
+</head>
+<body>
+
+<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+
+<button>Get External Content</button>
+</body>
+</html>
