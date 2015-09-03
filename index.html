@@ -43,26 +43,28 @@
   </form>
 </div>
 <script>
-/*$(document).ready(function(){
-    $("button").click(function(){
-         $.ajax(
-          {
-            url: "http://api.testingwebsitedesign.com/request.php",
-            crossDomain: true,
-            dataType: 'jsonp',
-            data: {action: 'test'},
-            type: 'POST',
-            success: function(result)
-            {
-                $("#div1").html(result);
-            }
-          }); 
 
-       
-    });
-});*/
+//function connect(e)
+//{
+var term= 'car';
+$.ajax({
+url:'http://api.testingwebsitedesign.com/request.php',
+type:'POST',
+data:term,
+dataType:'json',
+error:function(jqXHR,text_status,strError){
+alert("no connection");},
+timeout:60000,
+success:function(data){
+$("#result").html("");
+for(var i in data){
+$("#div1").append("<li>"+data[i]+"</li>");
+}
+}
+});
+//}
 
-$(document).bind("mobileinit", function() {
+/*$(document).bind("mobileinit", function() {
     $.support.cors = true;
     $.mobile.allowCrossDomainPages = true;
 });
@@ -81,7 +83,7 @@ req.onreadystatechange = function() {
 };
 req.send(null);
 });
-});
+});*/
 
 </script>
 </head>
