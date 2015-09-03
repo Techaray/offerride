@@ -31,69 +31,174 @@
 <body>
 
 <div class="container">
-  <h2>Offer Ride</h2>
-  <form role="form" action="" method="post" name="offer_ride_form">
+  <h2 class="text-center">Goyaar</h2>
+  <form  id="offer_ride_form">
     <div class="form-group">
-      <label for="email">Departure:</label>
-      <input type="text" class="form-control" id="departure" name="departure" placeholder="Enter Departure">
-    </div>
+              <label class="col-md-4 control-label">Person Name</label>
+              <div class="col-md-6">
+                <input type="text" id="person_name" class="form-control" name="person_name" value="">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Departure</label>
+              <div class="col-md-6">
+                <input type="text" id="departure" class="form-control" name="departure" value="">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Arrival</label>
+              <div class="col-md-6">
+                <input type="text" id="arrival" class="form-control" name="arrival" value="">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Departure Date</label>
+              <div class="col-md-6">
+                <input type="text" id="departure_date" class="form-control" name="departure_date" value="">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Return Date</label>
+              <div class="col-md-6">
+                <input type="text" id="return_date" class="form-control" name="return_date" value="">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Stop Overs</label>
+              <div class="col-md-6">
+                <input type="text" id="stopovers" class="form-control" name="stopovers" value="">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Price</label>
+              <div class="col-md-6">
+                <input type="text" id="price" class="form-control" name="price" value="">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Ride Detail</label>
+              <div class="col-md-6">
+                <textarea type="text" id="ride_detail" class="form-control" name="ride_detail"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">No. Of Seats</label>
+              <div class="col-md-6">
+                <!--<input type="text" class="form-control" name="no_of_seats" value="{{ old('no_of_seats') }}">-->
+                <select class="form-control" id="no_of_seats" name="no_of_seats">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Max Luggae Size</label>
+              <div class="col-md-6">
+                <!--<input type="text" class="form-control" name="max_luggage_size" value="{{ old('max_luggage_size') }}">-->
+                <select class="form-control" id="max_luggage_size" name="max_luggage_size">
+                  <option value="small">Small</option>
+                  <option value="medium">Medium</option>
+                  <option value="big">Big</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Leave At</label>
+              <div class="col-md-6">
+                <!--<input type="text" class="form-control" name="leave_at" value="{{ old('leave_at') }}">-->
+                <select class="form-control" id="leave_at" name="leave_at">
+                  <option value="ON_TIME">Right On Time</option>
+                  <option value="FIFTEEN_MINUTES">In a 15 minute window</option>
+                  <option value="THIRTY_MINUTES">In a 30 minute window</option>
+                  <option value="ONE_HOUR">In a 1 hour window</option>
+                  <option value="TWO_HOURS">In a 2 hour window</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Detour</label>
+              <div class="col-md-6">
+                <!--<input type="text" class="form-control" name="detaur" value="{{ old('detaur') }}">-->
+                <select class="form-control" id="detaur" name="detaur">
+                  <option value="NONE">I'm not willing to make a detour</option>
+                  <option value="FIFTEEN_MINUTES">15 minute detour max.</option>
+                  <option value="THIRTY_MINUTES">30 minute detour max.</option>
+                  <option value="WHATEVER_IT_TAKES">Anything is fine</option>
+                </select>
+              </div>
+            </div>
+            
+              <div class="form-group">
+              <div class="col-md-6 col-md-offset-4">
+                <input type='submit' name="offer_ride" value="Offer Ride" class="btn btn-default">
+              </div>
+            </div>
     
-   
-    <button type="submit" name="offer_ride" class="btn btn-default">Offer Ride</button>
   </form>
 </div>
 <script>
 
-//function connect(e)
+
 //{
+/*
 
+http://goyaar.testingwebsitedesign.com/saveApiRide?person_name=simrat&departure=ziraa&arrival=chandigarh&departure_date=2015-28-08%2013:00&return_date=2015-28-08%2013:00&stopovers=morinda&price=100&ride_detail=test&no_of_seats=3&max_luggage_size=medium&leave_at=%22test%22&detaur=test
 
-$(document).ready(function(){
-  alert('test');
+*/
+$(document).ready(function(){ 
+  $("#offer_ride_form").submit(function() {
 
-$.ajax({
-      type: 'POST',
-      url: 'http://api.testingwebsitedesign.com/request.php',
-      crossDomain: true,
-      //data: {user:user, pass:pass},
-      cache: false,
+    var data = {
+      'person_name': $('#person_name').val(),
+      'departure': $('#departure').val(),
+      'arrival': $('#arrival').val(),
+      'chandigarh': $('#chandigarh').val(),
+      'departure_date': $('#departure_date').val(),
+      'return_date': $('#return_date').val(),
+      'stopovers': $('#stopovers').val(),
+      'price': $('#price').val(),
+      'ride_detail': $('#ride_detail').val(),
+      'no_of_seats': $('#no_of_seats').val(),
+      'max_luggage_size': $('#max_luggage_size').val(),
+      'leave_at': $('#leave_at').val(),
+      'detaur': $('#detaur').val()
+      };
 
-      success: function(data) {
-      alert(data);
-      }
-    });
+    $.ajax({
+          type: 'GET',
+          url: 'http://goyaar.testingwebsitedesign.com/saveApiRide',
+          crossDomain: true,
+          data: data,
+          cache: false,
+          datatype: 'jsonp',
 
+          success: function(data) {
+          alert('Data Added');
+          }
+        });
 
-})
-
-//}
-
-/*$(document).bind("mobileinit", function() {
-    $.support.cors = true;
-    $.mobile.allowCrossDomainPages = true;
+    return false;
+  });
 });
-$(document).ready(function(){
-$('button').click(function () {
- var req = new XMLHttpRequest();
-req.open("POST", "http://api.testingwebsitedesign.com/request.php", true);
-req.setRequestHeader("Content-type", "image/jpg");
-
-req.onreadystatechange = function() {
-    if (req.readyState == 4) {
-        if (req.status == 200) {
-            var data = req.responseText;
-        }
-    }
-};
-req.send(null);
-});
-});*/
 
 </script>
 </head>
 <body>
 
-<div id="div1">By Gursimrat singh</div>
+
 
 
 </body>
