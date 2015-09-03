@@ -1,0 +1,18 @@
+#offer_ride_form {
+    background: #7fb8d6 none repeat scroll 0 0;
+    border-radius: 11px;
+    color: white;
+    padding: 15px;
+}
+.btn.btn-default {
+    background: gold none repeat scroll 0 0;
+}
+.header h1 {
+    color: gray;
+}
+.header .lead {
+    color: gray;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 9px;
+}
