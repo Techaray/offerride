@@ -46,22 +46,26 @@
 
 //function connect(e)
 //{
-var term= 'car';
+
+
+$(document).ready(function(){
+  alert('test');
+
 $.ajax({
-url:'http://api.testingwebsitedesign.com/request.php',
-type:'POST',
-data:term,
-dataType:'json',
-error:function(jqXHR,text_status,strError){
-alert("no connection");},
-timeout:60000,
-success:function(data){
-$("#result").html("");
-for(var i in data){
-$("#div1").append("<li>"+data[i]+"</li>");
-}
-}
-});
+      type: 'POST',
+      url: 'http://api.testingwebsitedesign.com/request.php',
+      crossDomain: true,
+      //data: {user:user, pass:pass},
+      cache: false,
+
+      success: function(data) {
+      alert(data);
+      }
+    });
+
+
+})
+
 //}
 
 /*$(document).bind("mobileinit", function() {
@@ -89,8 +93,8 @@ req.send(null);
 </head>
 <body>
 
-<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+<div id="div1">here data will come</div>
 
-<button>Get External Content</button>
+
 </body>
 </html>
