@@ -30,8 +30,6 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
   <script src="js/default.js"></script>
-  <script type="text/javascript" src="cordova.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
 
 </head>
 <body>
@@ -158,6 +156,8 @@
     
   </form>
 </div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript">
    app.initialize();
 
@@ -175,7 +175,7 @@
             function onSuccess(position) {
               alert('onSuccess');
                 var element = document.getElementById('geolocation');
-                data = 'Latitude: '           + position.coords.latitude              + '<br />' +
+               element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
                                     'Longitude: '          + position.coords.longitude             + '<br />' +
                                     'Altitude: '           + position.coords.altitude              + '<br />' +
                                     'Accuracy: '           + position.coords.accuracy              + '<br />' +
@@ -183,7 +183,6 @@
                                     'Heading: '            + position.coords.heading               + '<br />' +
                                     'Speed: '              + position.coords.speed                 + '<br />' +
                                     'Timestamp: '          + position.timestamp                    + '<br />';
-                alert(data);
             }
 
             // onError Callback receives a PositionError object
