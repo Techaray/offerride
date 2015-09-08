@@ -3,13 +3,12 @@
   function initialize() {
     var input = document.getElementById('arrival');
     var input1 = document.getElementById('departure');
-    var options = {componentRestrictions: {country: 'in'}};
-                 
+    var options = {componentRestrictions: {country: 'in'}};         
     new google.maps.places.Autocomplete(input, options);
     new google.maps.places.Autocomplete(input1, options);
 }
 
-google.maps.event.addDomListener(window, 'load', initialize);
+google.maps.event.addDomListener(window, 'load',initialize);
 });
 
  $(document).ready(function(){
@@ -84,3 +83,18 @@ $("#find_ride_form").submit(function() {
   });
 
 });
+
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
+    navigator.geolocation.getCurrentPosition(onSuccess,Error);
+}
+function onSuccess(position) {
+    var lat = pos.coords.latitude;
+    var lng = pos.coords.longitude;
+    alert("lat : "+lat+" lng : " +lng);
+
+}
+
+function onError(error) {
+    alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
+}
