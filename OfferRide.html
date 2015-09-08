@@ -30,6 +30,8 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
   <script src="js/default.js"></script>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
 
 </head>
 <body>
@@ -156,7 +158,41 @@
     
   </form>
 </div>
+<script type="text/javascript">
+   app.initialize();
 
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+            // device APIs are available
+            //
+            function onDeviceReady() {
+              alert('onDeviceReady');
+                navigator.geolocation.getCurrentPosition(onSuccess, onError1);
+            }
+
+            // onSuccess Geolocation
+            //
+            function onSuccess(position) {
+              alert('onSuccess');
+                var element = document.getElementById('geolocation');
+                data = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                                    'Longitude: '          + position.coords.longitude             + '<br />' +
+                                    'Altitude: '           + position.coords.altitude              + '<br />' +
+                                    'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                                    'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                                    'Heading: '            + position.coords.heading               + '<br />' +
+                                    'Speed: '              + position.coords.speed                 + '<br />' +
+                                    'Timestamp: '          + position.timestamp                    + '<br />';
+                alert(data);
+            }
+
+            // onError Callback receives a PositionError object
+            //
+            function onError1(error) {
+                alert('code: '    + error.code    + '\n' +
+                      'message: ' + error.message + '\n');
+            }
+</script>
 </body>
 
 </html>
