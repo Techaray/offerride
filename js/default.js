@@ -82,6 +82,32 @@ $("#find_ride_form").submit(function() {
     return false;
   });
 
+
+$("#register_user_form").submit(function() {
+
+    var data = {
+      'name': $('#name').val(),
+      'email': $('#email').val(),
+      'password': $('#password').val(),
+      'password_confirmation': $('#password_confirmation').val()
+      };
+
+    $.ajax({
+          type: 'GET',
+          url: 'http://goyaar.testingwebsitedesign.com/registerApiUser',
+          crossDomain: true,
+          data: data,
+          cache: false,
+          datatype: 'jsonp',
+
+          success: function(data) {
+          alert(data);
+          }
+        });
+
+    return false;
+  });
+
 });
 
 document.addEventListener("deviceready", onDeviceReady, false);
