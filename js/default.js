@@ -102,6 +102,7 @@ $("#register_user_form").submit(function() {
 
           success: function(data) {
           alert(data);
+          window.location = "OfferRide.html";
           }
         });
 
