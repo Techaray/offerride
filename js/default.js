@@ -132,6 +132,7 @@ function onError(error) {
 
 function getLocation() {
     navigator.geolocation.getCurrentPosition(onSuccess, onError1);
+    $('#ajax-loader-find-ride').show();
 }
 
 // onSuccess Geolocation
@@ -164,6 +165,7 @@ function onSuccess(position) {
            //$('#departure').val(result[2]);
            //alert(address.address_components[3].long_name);
            $('#departure').val(address.address_components[3].long_name);
+           $('#ajax-loader-find-ride').hide();
           }
         };
         request.send();
