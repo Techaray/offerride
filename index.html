@@ -63,47 +63,38 @@
 <script>
 
 
-//{
-/*
+//app.initialize();
 
-http://goyaar.testingwebsitedesign.com/saveApiRide?person_name=simrat&departure=ziraa&arrival=chandigarh&departure_date=2015-28-08%2013:00&return_date=2015-28-08%2013:00&stopovers=morinda&price=100&ride_detail=test&no_of_seats=3&max_luggage_size=medium&leave_at=%22test%22&detaur=test
+        document.addEventListener("deviceready", onDeviceReady, false);
 
-*/
-$(document).ready(function(){ 
-  $("#offer_ride_form").submit(function() {
+        // device APIs are available
+        //
+        function onDeviceReady() {
+          alert('onDeviceReady');
+            navigator.geolocation.getCurrentPosition(onSuccess, onError1);
+        }
 
-    var data = {
-      'person_name': $('#person_name').val(),
-      'departure': $('#departure').val(),
-      'arrival': $('#arrival').val(),
-      'chandigarh': $('#chandigarh').val(),
-      'departure_date': $('#departure_date').val(),
-      'return_date': $('#return_date').val(),
-      'stopovers': $('#stopovers').val(),
-      'price': $('#price').val(),
-      'ride_detail': $('#ride_detail').val(),
-      'no_of_seats': $('#no_of_seats').val(),
-      'max_luggage_size': $('#max_luggage_size').val(),
-      'leave_at': $('#leave_at').val(),
-      'detaur': $('#detaur').val()
-      };
+        // onSuccess Geolocation
+        //
+        function onSuccess(position) {
+        alert('onSuccess');
+           /* var element = document.getElementById('geolocation');
+           element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                                'Longitude: '          + position.coords.longitude             + '<br />' +
+                                'Altitude: '           + position.coords.altitude              + '<br />' +
+                                'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                                'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                                'Heading: '            + position.coords.heading               + '<br />' +
+                                'Speed: '              + position.coords.speed                 + '<br />' +
+                                'Timestamp: '          + position.timestamp                    + '<br />';*/
+        }
 
-    $.ajax({
-          type: 'GET',
-          url: 'http://goyaar.testingwebsitedesign.com/saveApiRide',
-          crossDomain: true,
-          data: data,
-          cache: false,
-          datatype: 'jsonp',
-
-          success: function(data) {
-          alert('Data Added');
-          }
-        });
-
-    return false;
-  });
-});
+        // onError Callback receives a PositionError object
+        //
+        function onError1(error) {
+            alert('code: '    + error.code    + '\n' +
+                  'message: ' + error.message + '\n');
+        }
 
 </script>
 </head>
