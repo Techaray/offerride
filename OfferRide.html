@@ -167,14 +167,14 @@
             // device APIs are available
             //
             function onDeviceReady() {
-            	alert('device is ready');
+            	alert('onDeviceReady');
                 navigator.geolocation.getCurrentPosition(onSuccess, onError1);
             }
 
             // onSuccess Geolocation
             //
             function onSuccess(position) {
-        		alert('location is loaded');
+        		alert('onSuccess');
                 var element = document.getElementById('geolocation');
                element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
                                     'Longitude: '          + position.coords.longitude             + '<br />' +
