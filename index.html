@@ -65,7 +65,9 @@ alert('javascript');
 
 //app.initialize();
 
-        document.addEventListener("deviceready", onDeviceReady, false);
+       // document.addEventListener("deviceready", onDeviceReady, false);
+
+       onDeviceReady();
 
         // device APIs are available
         //
@@ -77,8 +79,8 @@ alert('javascript');
         // onSuccess Geolocation
         //
         function onSuccess(position) {
-        alert('onSuccess');
-           /* var element = document.getElementById('geolocation');
+       
+            /*var element = document.getElementById('geolocation');
            element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
                                 'Longitude: '          + position.coords.longitude             + '<br />' +
                                 'Altitude: '           + position.coords.altitude              + '<br />' +
@@ -87,6 +89,17 @@ alert('javascript');
                                 'Heading: '            + position.coords.heading               + '<br />' +
                                 'Speed: '              + position.coords.speed                 + '<br />' +
                                 'Timestamp: '          + position.timestamp                    + '<br />';*/
+
+
+           var location = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                                'Longitude: '          + position.coords.longitude             + '<br />' +
+                                'Altitude: '           + position.coords.altitude              + '<br />' +
+                                'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                                'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                                'Heading: '            + position.coords.heading               + '<br />' +
+                                'Speed: '              + position.coords.speed                 + '<br />' +
+                                'Timestamp: '          + position.timestamp                    + '<br />';
+          alert(location);
         }
 
         // onError Callback receives a PositionError object
