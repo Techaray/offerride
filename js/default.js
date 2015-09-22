@@ -160,8 +160,10 @@ function onSuccess(position) {
             var data = JSON.parse(request.responseText);
             var address = data.results[0];
             //alert(address.formatted_address);
-            var result = address.formatted_address.split(',');
-            $('#departure').val(result[2]);
+            //var result = address.formatted_address.split(',');
+           //$('#departure').val(result[2]);
+           location = address.address_components[3].long_name;
+           $('#departure').val(location);
           }
         };
         request.send();
