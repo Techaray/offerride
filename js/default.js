@@ -125,3 +125,51 @@ function onSuccess(position) {
 function onError(error) {
     alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
 }
+
+
+
+/* GEO LOCATION */
+
+function getLocation() {
+    navigator.geolocation.getCurrentPosition(onSuccess, onError1);
+}
+
+// onSuccess Geolocation
+//
+function onSuccess(position) {
+
+    /*var element = document.getElementById('geolocation');
+   element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                        'Longitude: '          + position.coords.longitude             + '<br />' +
+                        'Altitude: '           + position.coords.altitude              + '<br />' +
+                        'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                        'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                        'Heading: '            + position.coords.heading               + '<br />' +
+                        'Speed: '              + position.coords.speed                 + '<br />' +
+                        'Timestamp: '          + position.timestamp                    + '<br />';*/
+
+        var request = new XMLHttpRequest();
+
+        var method = 'GET';
+        var url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng='+position.coords.latitude+','+position.coords.longitude+'&sensor=true';
+        var async = true;
+
+        request.open(method, url, async);
+        request.onreadystatechange = function(){
+          if(request.readyState == 4 && request.status == 200){
+            var data = JSON.parse(request.responseText);
+            var address = data.results[0];
+            //alert(address.formatted_address);
+            var result = address.formatted_address.split(',');
+            $('#departure').val(result[2]);
+          }
+        };
+        request.send();
+}
+
+// onError Callback receives a PositionError object
+//
+function onError1(error) {
+    alert('code: '    + error.code    + '\n' +
+          'message: ' + error.message + '\n');
+}
