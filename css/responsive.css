@@ -1,0 +1,249 @@
+@charset "utf-8";
+/* Responsive CSS */
+
+@media screen and (max-width:1199px){
+  .ride-left-inner .left-dept {
+  width: 30%;
+}
+.right-dept-three {
+  width: 70%;
+}
+.ride-left-inner .right-dept-three .right-dept {
+  width: 100%;
+}
+.ride-inner {
+  display: table;
+  width: 100%;
+}
+}
+
+@media screen and (max-width:991px){
+.header-inner {
+width: 100%;
+}
+.work p {
+font-size: 17px;
+line-height: 34px;
+width: 100%;
+}
+.footer-mid {
+margin-left: 0px;
+}
+.ride-left {
+  display: inline-block;
+}
+}
+
+@media screen and (max-width:767px){
+.logo{
+text-align: center;
+}
+.navbar-nav {
+float: none;
+text-align: center;
+margin-top: 10px;
+}
+.navbar-collapse {
+overflow-x: hidden;
+}
+.header-inner h1 {
+font-size: 45px;
+}
+.work h2 {
+font-size: 35px;
+}
+.travel h3 {
+font-size: 30px;
+}
+.travel {
+padding: 50px 0;
+}
+.travel-area {
+margin-top: 20px;
+}
+.travel-image {
+margin-top: 30px;
+}
+.footer-bottom p {
+text-align: center;
+}
+.footer-social {
+margin-top: 15px;
+text-align: center;
+}
+.banner-form.listing .form-banner {
+  width: 38%;
+}
+.ride-head h4 {
+  float: none;
+  margin-top: 15px;
+}
+.ride-head p {
+  float: none;
+  margin-top: 15px;
+}
+}
+@media screen and (max-width:725px){
+ .right1 {
+  width: 45%;
+} 
+.offer-rate {
+  width: 50%;
+  text-align: left;
+}
+.right2 {
+  width: 55%;
+}
+}
+@media screen and (max-width:640px){
+.header-inner h1 {
+font-size: 35px;
+}
+.work h2 {
+font-size: 25px;
+}
+.travel h3 {
+font-size: 22px;
+}
+ .right1 {
+  width: 100%;
+  border: 0 none;
+} 
+.offer-rate {
+  width:100%;
+  margin-top: 30px;
+  text-align: left;
+}
+.right2 {
+  width: 100%;
+  padding-left: 0;
+  margin-top: 30px;
+}
+.drive-detail {
+  float: left;
+  width: 74%;
+}
+.drive-img {
+  float: left;
+  width: 25%;
+}
+.ride-left-inner .left-dept {
+  width: 40%;
+}
+.right-dept-three {
+  width: 60%;
+}
+}
+@media screen and (max-width:530px){
+.banner-form.listing .form-banner {
+  width: 30%;
+}
+.ride-left-inner .left-dept {
+  font-size: 14px;
+  width: 28%;
+}
+.ride-left-inner .right-dept a {
+  font-size: 14px;
+}
+.ride-left-inner .right-dept a .fa {
+  font-size: 15px;
+  margin-right: 5px;
+}
+.ride-left-inner .right-dept {
+  font-size: 14px;
+}
+.ride-left-inner .right-dept .fa {
+  font-size: 12px;
+  margin-right: 3px;
+}
+.right-dept-three {
+  width: 72%;
+}
+}
+@media screen and (max-width:480px){
+.form-banner {
+width: 35%;
+}
+.navbar-header{
+  margin-top: 20px;
+}
+.header-inner h1 {
+font-size: 25px;
+}
+.work h2 {
+font-size: 22px;
+line-height: 28px;
+}
+.travel h3 {
+font-size: 22px;
+line-height: 28px;
+}
+.form-app li {
+  display: inline-block;
+  margin-right: 0;
+}
+.ride-left-inner .left-dept {
+  font-size: 14px;
+  width: 35%;
+}
+.right-dept-three {
+  width: 65%;
+}
+.drive-detail {
+  float: none;
+  width: 100%;
+}
+.drive-img {
+  float: none;
+  width: 100%;
+  display: table;
+}
+.ride-left-inner .right-dept {
+  display: table;
+  font-size: 14px;
+  width: 60%;
+  padding-left: 10px;
+}
+.ride-left-inner .left-dept {
+  display: table;
+  font-size: 14px;
+  width: 32%;
+}
+.ride-left-inner {
+  margin-bottom: 15px;
+  float: left;
+  width: 100%;
+}
+.right-dept-three {
+  width: 68%;
+}
+}
+@media screen and (max-width:380px){
+.form-banner {
+  width: 28%;
+}
+.btn.btn-primary.banner-button {
+  padding: 10px 26px;
+}
+.form-app li {
+  display: block;
+  margin-right: 0;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.travel h3 {
+padding:0 20px;
+}
+.header-inner h1 {
+  font-size: 23px;
+}
+.header-inner p {
+  font-size: 16px;
+}
+.form-app h4 {
+  font-size: 25px;
+}
+.ride-head h4 {
+  font-size: 18px;
+}
+}
