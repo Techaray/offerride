@@ -73,7 +73,8 @@ $("#find_ride_form").submit(function() {
               //$("#servers").text($("#servers").text() + " " + value.servername);
               //alert(value.person_name);
                str += '<div class="col-sm-6 custom-list"><span id="date">'+value.departure_date+'<p></p></span><br><span id="label">Price : </span><span id="price">'+value.price+'</span><br><span id="label">Person Name : </span><span id="person-name">'+value.person_name+'</span><br><span id="label">Departure : </span><span id="departure">'+value.departure+'</span><br><span id="label">Arrival : </span><span id="arrival">'+value.arrival+'</span><br><span id="label">Stoppovers : </span><span id="stoppovers">'+value.stopovers+'</span><br><span id="label">Max Luggage Size : </span><span id="max-luggage-size">'+value.max_luggage_size+'</span><br><span id="label">Seats : </span><span id="seats">'+value.no_of_seats+'</span><br></div>';
-              $('.custom-div').append( str );
+              //$('.custom-div').append( str ).fadeIn(9000);
+              $(str).hide().appendTo(".custom-div").fadeIn(1000);
           });
           
           }

@@ -402,3 +402,13 @@ display: inline-block;
 width: 75%;
 }
 }
+
+/* CUSTOM */
+
+.custom-list {
+    background: white none repeat scroll 0 0;
+    border: 5px solid #d4112c;
+    border-radius: 15px;
+    margin-top: 6px;
+    padding: 17px;
+}
